@@ -78,13 +78,14 @@ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 ### 3.2.2centos7
 
-    yum install -y curl policycorecurl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bashutils-python openssh-server
-    systemctl enable sshd
-    systemctl start sshd
-    firewall-cmd --permanent --add-service=http
-    systemctl reload firewalld
+    sudo yum install -y curl policycoreutils-python openssh-server
+    sudo systemctl enable sshd
+    sudo systemctl start sshd
+    sudo firewall-cmd --permanent --add-service=http
+    sudo systemctl reload firewalld
+
     curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
-    sudo EXTERNAL_URL="http://120.92.104.176" yum install -y gitlab-ee
+    sudo EXTERNAL_URL="http://gitlab.example.com" yum install -y gitlab-ee
 
 ### 3.2.3 清华镜像
 
